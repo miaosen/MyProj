@@ -50,13 +50,15 @@ public final class R {
         public static int ln_bg=0x7f020015;
     }
     public static final class id {
-        public static int action_settings=0x7f09001e;
+        public static int action_settings=0x7f090020;
         public static int bottom=0x7f090005;
         public static int btn_check_time=0x7f090010;
         public static int btn_month=0x7f090008;
         public static int btn_retrun=0x7f090009;
         public static int btn_sure=0x7f09000b;
         public static int btn_year=0x7f090007;
+        public static int button1=0x7f09001c;
+        public static int button2=0x7f09001d;
         public static int center=0x7f090001;
         public static int clock_btn=0x7f09000a;
         public static int content=0x7f090003;
@@ -66,10 +68,10 @@ public final class R {
         public static int gv=0x7f09000d;
         public static int header_left=0x7f090019;
         public static int header_right=0x7f09001b;
-        public static int horizSc=0x7f09001c;
+        public static int horizSc=0x7f09001e;
         public static int imageView1=0x7f090006;
         public static int left=0x7f090002;
-        public static int line=0x7f09001d;
+        public static int line=0x7f09001f;
         public static int ln_clock=0x7f090014;
         public static int ln_time=0x7f09000e;
         public static int ln_week=0x7f09000c;
@@ -90,7 +92,8 @@ public final class R {
         public static int date_sp_item=0x7f030004;
         public static int demo_ui=0x7f030005;
         public static int header=0x7f030006;
-        public static int tab_linear=0x7f030007;
+        public static int layout_item=0x7f030007;
+        public static int tab_linear=0x7f030008;
     }
     public static final class menu {
         public static int main=0x7f080000;

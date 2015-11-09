@@ -30,7 +30,7 @@ public class FileUtils {
 			File dirFile = new File(dbDir, path);
 			if (!dirFile.exists()) {
 				dirFile.mkdirs();
-				Logger.info("数据库指定目录不存在，已为你创建一个！");
+				Logger.info("指定目录不存在，已为你创建一个！");
 			}
 			// 数据库文件是否创建成功
 			boolean isFileCreateSuccess = false;
