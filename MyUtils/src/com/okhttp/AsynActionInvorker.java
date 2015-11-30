@@ -1,15 +1,12 @@
 package com.okhttp;
 
-import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
-
 import android.os.Handler;
 import android.os.Message;
-
 import com.comment.AppFactory;
 import com.comment.Logger;
 import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
@@ -20,25 +17,28 @@ public class AsynActionInvorker {
 	private String host=AppFactory.getHOST();
 	private OkHttpClient client;
 	private String actionClass;
-	// 表单提交方式
+	// 默认表单提交方式
 	private String way = "post";
+	
+	private Map<String,Object> map;
 
-	// 文本监听接口
-	private AfterGetTextListener afterGetTextListener;
+	// 文本监听器
+	private GetTextListener getTextListener;
 	
 	public AsynActionInvorker(String actionClass) {
 		super();
 		this.actionClass = actionClass;
 	}
+	
 
-	public void invorkerForString(final String method, Map<String, Object> map) {
+	public void invorkerForString(final String method) {
 		client = OkHttpFactory.getInstance();
 		String url = host +"/"+actionClass+"?action=" + method;
 		Logger.info("URL==="+url);
 		if (way.equals("post")) {
-			new getStringByPost(url,map).start();
+			new getStringByPost(url).start();
 		} else {// get方式
-			new getStringByGet(url,map).start();
+			new getStringByGet(url).start();
 		}
 	}
 
@@ -47,24 +47,29 @@ public class AsynActionInvorker {
 	 */
 	class getStringByPost extends Thread {
 		private String url;
-		private Map<String, Object> map;
+		private String loggerUrl;
+		
+		
 		final Message msg = new Message();
 
-		public getStringByPost(String url, Map<String, Object> map) {
+		public getStringByPost(String url) {
 			this.url = url;
-			this.map = map;
+			loggerUrl=url;
 		}
 		public void run() {
 			try {
 				FormEncodingBuilder formEncodingBuilder = new FormEncodingBuilder();
 				if (map == null || map.size() == 0) {
+					Logger.info("参数为空");
 				} else {
 					for (String key : map.keySet()) {
 						formEncodingBuilder.add(key.toString(), map.get(key)
 								.toString());
 						Logger.info("key==="+key+"   value==="+map.get(key)
 								.toString());
+						loggerUrl=loggerUrl+"&"+key+"="+map.get(key);
 					}
+					Logger.info("完整提交链接==="+loggerUrl);
 				}
 				RequestBody formBody = formEncodingBuilder.build();
 				Request request = new Request.Builder().url(url).post(formBody)
@@ -88,17 +93,15 @@ public class AsynActionInvorker {
 	 */
 	class getStringByGet extends Thread {
 		private String url;
-		private Map<String, Object> map;
 		final Message msg = new Message();
 
-		public getStringByGet(String url, Map<String, Object> map) {
+		public getStringByGet(String url) {
 			this.url = url;
-			this.map = map;
 		}
-
 		public void run() {
 			try {
 				if (map == null || map.size() == 0) {
+					Logger.info("参数为空");
 				} else {
 					for (String key : map.keySet()) {
 						url = url + "&" + key.toString() + "="
@@ -113,8 +116,6 @@ public class AsynActionInvorker {
 					msg.what = 1;
 					hanler.sendMessage(msg);
 				}
-
-				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -130,8 +131,8 @@ public class AsynActionInvorker {
 			switch (num) {
 			case 1:// 获取字符串
 				String jsonStr = (String) msg.obj;
-				if(afterGetTextListener!=null){
-					afterGetTextListener.onResult(jsonStr);
+				if(getTextListener!=null){
+					getTextListener.onResult(jsonStr);
 				}
 				break;
 			default:
@@ -139,6 +140,32 @@ public class AsynActionInvorker {
 			}
 		};
 	};
+	
+	
+	/**
+	 * 添加参数
+	 * @param key
+	 * @param value
+	 */
+	public void addParam(String key,Object value){
+		if(map==null){
+			map=new HashMap<String, Object>();
+		}
+		map.put(key, value);
+	}
+
+	
+	
+	
+	
+	
+	/**
+	 * 获取参数
+	 * @return
+	 */
+	public Map<String, Object> getMap() {
+		return map;
+	}
 
 	public String getHost() {
 		return host;
@@ -156,11 +183,12 @@ public class AsynActionInvorker {
 		this.way = way;
 	}
 	
-	public void setAfterGetTextListener(AfterGetTextListener afterGetTextListener) {
-		this.afterGetTextListener = afterGetTextListener;
+
+	public void setGetTextListener(GetTextListener getTextListener) {
+		this.getTextListener = getTextListener;
 	}
 
-	public interface AfterGetTextListener {
+	public interface GetTextListener {
 		public void onResult(String text);
 	}
 

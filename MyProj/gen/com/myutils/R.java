@@ -17,31 +17,31 @@ public final class R {
 		public static final int text_size = 0x7f050002;
 	}
 	public static final class drawable {
-		public static final int anm_to_left = 0x7f020000;
-		public static final int anm_to_right = 0x7f020001;
-		public static final int date_bg_dialog = 0x7f020002;
-		public static final int date_bg_head = 0x7f020003;
-		public static final int date_bg_left_df = 0x7f020004;
-		public static final int date_bg_left_pr = 0x7f020005;
-		public static final int date_bg_medle_df = 0x7f020006;
-		public static final int date_bg_medle_pr = 0x7f020007;
-		public static final int date_bg_right_df = 0x7f020008;
-		public static final int date_bg_right_pr = 0x7f020009;
-		public static final int date_bg_save = 0x7f02000a;
-		public static final int date_btn_date_left = 0x7f02000b;
-		public static final int date_img_sure = 0x7f02000c;
-		public static final int date_share_check = 0x7f02000d;
-		public static final int date_share_check_df = 0x7f02000e;
-		public static final int date_share_date_head = 0x7f02000f;
-		public static final int date_time_ck = 0x7f020010;
-		public static final int date_time_df = 0x7f020011;
-		public static final int ic_launcher = 0x7f020012;
-		public static final int icon_jiantou = 0x7f020013;
-		public static final int icon_msg = 0x7f020014;
-		public static final int ln_bg = 0x7f020015;
+		public static final int anm_to_left = 0x7f020001;
+		public static final int anm_to_right = 0x7f020002;
+		public static final int date_bg_dialog = 0x7f020003;
+		public static final int date_bg_head = 0x7f020004;
+		public static final int date_bg_left_df = 0x7f020005;
+		public static final int date_bg_left_pr = 0x7f020006;
+		public static final int date_bg_medle_df = 0x7f020007;
+		public static final int date_bg_medle_pr = 0x7f020008;
+		public static final int date_bg_right_df = 0x7f020009;
+		public static final int date_bg_right_pr = 0x7f02000a;
+		public static final int date_bg_save = 0x7f02000b;
+		public static final int date_btn_date_left = 0x7f02000c;
+		public static final int date_img_sure = 0x7f02000d;
+		public static final int date_share_check = 0x7f02000e;
+		public static final int date_share_check_df = 0x7f02000f;
+		public static final int date_share_date_head = 0x7f020010;
+		public static final int date_time_ck = 0x7f020011;
+		public static final int date_time_df = 0x7f020012;
+		public static final int ic_launcher = 0x7f020013;
+		public static final int icon_jiantou = 0x7f020014;
+		public static final int icon_msg = 0x7f020015;
+		public static final int ln_bg = 0x7f020016;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f090023;
+		public static final int action_settings = 0x7f090030;
 		public static final int bottom = 0x7f090009;
 		public static final int btn_check_time = 0x7f090014;
 		public static final int btn_month = 0x7f09000c;
@@ -55,17 +55,17 @@ public final class R {
 		public static final int ed_month = 0x7f090016;
 		public static final int ed_year = 0x7f090015;
 		public static final int gv = 0x7f090011;
-		public static final int header_left = 0x7f09001d;
-		public static final int header_right = 0x7f09001f;
-		public static final int horizSc = 0x7f090020;
+		public static final int header_left = 0x7f09001e;
+		public static final int header_right = 0x7f090020;
+		public static final int horizSc = 0x7f09002d;
 		public static final int imageView1 = 0x7f09000a;
 		public static final int left = 0x7f090006;
-		public static final int line = 0x7f090021;
+		public static final int line = 0x7f09002e;
 		public static final int ln_clock = 0x7f090018;
 		public static final int ln_time = 0x7f090012;
 		public static final int ln_week = 0x7f090010;
 		public static final int right = 0x7f090008;
-		public static final int title = 0x7f09001e;
+		public static final int title = 0x7f09001f;
 		public static final int top = 0x7f090004;
 		public static final int tp = 0x7f090013;
 		public static final int tv_hour = 0x7f090019;
@@ -79,9 +79,9 @@ public final class R {
 		public static final int change_color = 0x7f030004;
 		public static final int date = 0x7f030005;
 		public static final int date_sp_item = 0x7f030006;
-		public static final int demo_ui = 0x7f030008;
-		public static final int header = 0x7f030009;
-		public static final int tab_linear = 0x7f03000a;
+		public static final int demo_ui = 0x7f030009;
+		public static final int header = 0x7f03000a;
+		public static final int tab_linear = 0x7f030010;
 	}
 	public static final class menu {
 		public static final int main = 0x7f080000;

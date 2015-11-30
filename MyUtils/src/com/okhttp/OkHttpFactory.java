@@ -22,7 +22,7 @@ public class OkHttpFactory {
 	public static OkHttpClient getOkHttp(){
 		client = new OkHttpClient();
 		//连接超时  10秒
-		client.setConnectTimeout(10, TimeUnit.SECONDS);
+		client.setConnectTimeout(1000, TimeUnit.SECONDS);
 		return client;
 	}
 
