@@ -8,6 +8,7 @@ import android.widget.LinearLayout.LayoutParams;
 
 import com.comment.Logger;
 import com.json.RowObject;
+import com.ui.apdater.BaseFillRecycleViewAdapter;
 
 public class MyAdapter extends BaseFillRecycleViewAdapter{
 	

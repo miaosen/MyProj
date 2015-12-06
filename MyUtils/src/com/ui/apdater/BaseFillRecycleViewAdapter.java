@@ -1,13 +1,16 @@
-package com.ui.pulltorefresh;
+package com.ui.apdater;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.comment.Logger;
+import com.google.gson.reflect.TypeToken;
 import com.json.JSONSerializer;
 import com.json.RowObject;
 import com.utils.ViewUtils;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

@@ -15,8 +15,8 @@ import com.example.myproj.R;
 import com.json.RowObject;
 import com.okhttp.AsynActionInvorker;
 import com.okhttp.AsynActionInvorker.GetTextListener;
-import com.ui.pulltorefresh.BaseFillRecycleViewAdapter.OnItemClickListener;
-import com.ui.pulltorefresh.BaseFillRecycleViewAdapter.ViewHolder;
+import com.ui.apdater.BaseFillRecycleViewAdapter.OnItemClickListener;
+import com.ui.apdater.BaseFillRecycleViewAdapter.ViewHolder;
 import com.ui.pulltorefresh.PullToRefresh.OnLoadDataListener;
 import com.ui.pulltorefresh.PullToRefresh.OnRefreshListener;
 

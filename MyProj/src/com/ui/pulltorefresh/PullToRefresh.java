@@ -5,6 +5,7 @@ import java.util.List;
 import com.comment.Logger;
 import com.example.myproj.R;
 import com.json.RowObject;
+import com.ui.apdater.BaseFillRecycleViewAdapter;
 import com.utils.DPUtils;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

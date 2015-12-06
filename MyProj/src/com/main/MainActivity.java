@@ -1,7 +1,13 @@
 package com.main;
 
+import java.util.Properties;
+
+import com.base.MyApplication;
+import com.comment.Logger;
 import com.example.myproj.R;
 import com.ui.alertview.AlertView;
+import com.utils.TestUtils;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +35,9 @@ public class MainActivity extends Activity {
 		btn=(Button) findViewById(R.id.btn);
 		btn.setOnClickListener(new mClik());
 		setAlertView();
+		TestUtils test=new TestUtils();
 		
+		Logger.info("....getPackageName====="+test.test());
 //		FrameLayout content=(FrameLayout) ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
 //		content.getChildAt(0).setBackgroundColor(Color.parseColor("#b0000000"));
 //		content.addView(alertView,1);
@@ -53,7 +61,6 @@ public class MainActivity extends Activity {
 		
 		
 	}
-	
 	
 	private void setAlertView() {
 		View view=LayoutInflater.from(context).inflate(R.layout.aa, null);
